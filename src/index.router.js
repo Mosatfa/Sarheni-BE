@@ -14,13 +14,16 @@ const initApp = (app, express) => {
     app.use(express.json({}))
 
     //Setup API Routing 
+    app.get('/', (req, res, next) => {
+        return res.json({message:'welcome to Sarheni'})
+    })
     app.use('/auth', authRouter)
     app.use('/user', userRouter)
     app.use('/message', messageRouter)
 
 
     app.all('*', (req, res, next) => {
-        res.send("In-valid Routing Plz check url  or  method")
+        res.status(400).send("In-valid Routing Plz check url  or  method")
     })
 
     // Gloable Error Handling
