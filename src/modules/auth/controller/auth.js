@@ -163,7 +163,7 @@ export const reqNewConfirmEmail = asyncHandler(async (req, res, next) => {
         return next(new Error("Email Rejected", { cause: 400 }))
     }
 
-    return res.status(200).send("<h1>Please check your email</h1>")
+    return res.status(200).json({message:'Done'})
 })
 
 export const logIn = asyncHandler(async (req, res, next) => {
