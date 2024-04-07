@@ -23,7 +23,7 @@ const initApp = (app, express) => {
 
 
     app.all('*', (req, res, next) => {
-        res.status(400).send("In-valid Routing Plz check url  or  method")
+        res.status(404).send("In-valid Routing Plz check url  or  method")
     })
 
     // Gloable Error Handling
